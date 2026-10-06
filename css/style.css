@@ -77,25 +77,48 @@ body {
   font-weight: bold;
 }
 
-.git-intro {
-  padding: 60px 40px;
-}
-
-.container {
-  background-color: var(--color-card-bg);
-  color: var(--color-text);
-  padding: 40px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
+header {
+  padding: 60px 20px;
   text-align: center;
 }
 
-.container h1 {
+.hero-intro {
+  font-size: 18px;
+  font-weight: bold;
   color: var(--color-navy);
-  margin-bottom: 15px;
+  margin: 12px auto;
 }
 
-.container p {
+.hero-title {
+  font-size: 50px;
+  font-weight: bold;
+  color: var(--color-navy);
+  margin: 12px auto;
+  margin-bottom: 12px;
+}
+
+.hero-text {
+  font-size: 18px;
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  margin: 12px auto;
+  max-width: 600px;
+}
+
+.command {
+  display: inline-block;
+  background: var(--color-navy);
+  color: #ffffff;
+  border: none;
+  padding: 14px 30px;
+  font-size: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
 }
