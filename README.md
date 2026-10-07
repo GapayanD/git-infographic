@@ -66,7 +66,7 @@ git-infographic/
 - [x] Shared navigation with an active-page highlight
 - [x] Home page hero
 - [x] Lint + CI setup
-- [ ] Git vs GitHub page content
+- [x] Git vs GitHub page content
 - [ ] Commands cheat sheet
 - [ ] Dark mode (`scripts/script.js`)
 
