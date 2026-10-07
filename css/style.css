@@ -91,7 +91,6 @@ header {
   font-weight: bold;
   color: var(--color-navy);
   margin: 12px auto;
-  margin-bottom: 12px;
 }
 
 .hero-text {
@@ -172,7 +171,6 @@ header {
   padding: 22px 26px;
   display: flex;
   flex-direction: column;
-  gap: auto;
 }
 
 .summary-content {
@@ -224,4 +222,35 @@ header {
   font-size: 14px;
   color: var(--color-text-secondary);
   line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .navlinks a {
+    margin: 0 12px;
+  }
+
+  header {
+    padding: 40px 20px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .comparison {
+    grid-template-columns: 1fr;
+    padding: 0 20px 10px;
+  }
+
+  .summary,
+  .creator {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
