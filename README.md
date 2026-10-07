@@ -1,54 +1,72 @@
 # git-infographic
 
-A small static site called **git101**, a beginner-friendly guide to Git presented as a simple infographic.
+**git101** — a beginner-friendly guide to Git, presented as a simple static infographic site. No frameworks, no build step.
 
-> **Status:** work in progress. The shared navigation and styling are in place. The page content is still to come.
+&gt; **Status:** work in progress. Shared navigation, styling, and the home page hero are in place; page content is still to come.
 
 ## Pages
 
 | Page | File | Status |
 | --- | --- | --- |
-| Home | `index.html` | Navigation only |
-| Git vs GitHub | `git-vs-github.html` | Empty |
-| Commands | `commands.html` | Empty |
+| Home | `index.html` | Hero section |
+| Git vs GitHub | `git-vs-github.html` | Navigation only |
+| Commands | `commands.html` | Navigation only |
 
 ## Run locally
 
-There is no build step and no dependencies. Open `index.html` in a browser, or serve the folder:
+The site is plain HTML/CSS/JS — open `index.html` in a browser, or serve the folder:
 
-```bash
+\`\`\`bash
 git clone https://github.com/Kleyen/git-infographic.git
 cd git-infographic
 python3 -m http.server 8000
-```
+\`\`\`
 
-Then open <http://localhost:8000>.
+Then open &lt;http://localhost:8000&gt;.
+
+## Linting
+
+Dev dependencies ([html-validate](https://html-validate.org/), [stylelint](https://stylelint.io/)) are used for CI only — the site itself has no runtime dependencies.
+
+\`\`\`bash
+npm ci
+npm run lint        # all checks
+npm run lint:html   # validate HTML
+npm run lint:css    # lint CSS
+npm run lint:js     # syntax-check JavaScript
+\`\`\`
+
+CI (`.github/workflows/ci.yml`) runs the lint suite and an offline [lychee](https://github.com/lycheeverse/lychee) link check on every push and pull request.
 
 ## Project structure
 
-```
+\`\`\`
 git-infographic/
 ├── index.html
 ├── git-vs-github.html
 ├── commands.html
 ├── css/
-│   └── style.css        # theme colors as CSS variables, nav and layout
+│   └── style.css        # theme colors as CSS variables, nav, hero, layout
 ├── scripts/
 │   └── script.js        # placeholder for dark mode
-└── assets/              # logo icons
-```
+├── assets/              # logo icons
+├── package.json         # lint tooling only (dev dependencies)
+└── .github/workflows/
+    └── ci.yml           # lint + link checks
+\`\`\`
 
 ## Built with
 
-- HTML
+- HTML5
 - CSS (custom properties, no framework)
 - Vanilla JavaScript (placeholder only)
 
 ## Roadmap
 
 - [x] Shared navigation with an active-page highlight
-- [ ] Home page content
-- [ ] Git vs GitHub page
+- [x] Home page hero
+- [x] Lint + CI setup
+- [ ] Git vs GitHub page content
 - [ ] Commands cheat sheet
 - [ ] Dark mode (`scripts/script.js`)
 
