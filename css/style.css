@@ -112,13 +112,6 @@ header {
   text-decoration: none;
 }
 
-.footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  color: var(--color-text-secondary);
-}
-
 .git-header {
   padding: 30px 20px;
   text-align: center;
@@ -224,7 +217,7 @@ header {
   line-height: 1.6;
 }
 
-@media (width <= 600px)  {
+@media (width <= 600px) {
   .nav {
     flex-direction: column;
     gap: 12px;
@@ -276,7 +269,6 @@ header {
 }
 
 .feature-card p {
-  color: var(--color-secondary);
   color: var(--color-text-secondary);
   font-size: 14px;
   line-height: 1.5;
