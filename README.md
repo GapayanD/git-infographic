@@ -8,7 +8,7 @@
 
 | Page | File | Status |
 | --- | --- | --- |
-| Home | `index.html` | Hero section |
+| Home | `index.html` | Completed |
 | Git vs GitHub | `git-vs-github.html` | Completed |
 | Commands | `commands.html` | Navigation only |
 
@@ -64,7 +64,7 @@ git-infographic/
 ## Roadmap
 
 - [x] Shared navigation with an active-page highlight
-- [x] Home page hero
+- [x] Home page
 - [x] Lint + CI setup
 - [x] Git vs GitHub page content
 - [ ] Commands cheat sheet
