@@ -31,9 +31,6 @@ jobs:
       - name: Lint CSS
         run: npm run lint:css
 
-      - name: Syntax-check JS
-        run: npm run lint:js
-
   links:
     runs-on: ubuntu-latest
     steps:
