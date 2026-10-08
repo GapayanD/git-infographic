@@ -1,3 +1,6 @@
+/* =========================================================================
+   1. RESET & BASE
+   ========================================================================= */
 * {
   box-sizing: border-box;
 }
@@ -7,13 +10,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* =========================================================================
+   2. DESIGN TOKENS (CSS variables)
+   ========================================================================= */
 :root {
+  /* Base colors */
   --color-bg: #ffffff;
   --color-text: #2c2c2a;
   --color-text-secondary: #5f5e5a;
   --color-border: #e3e1d9;
   --color-card-bg: #faf9f5;
 
+  /* Brand / accent colors */
   --color-navy: #26215c;
   --color-purple: #534ab7;
   --color-purple-bg: #f1effb;
@@ -22,15 +30,22 @@ body {
   --color-coral-bg: #fbede7;
   --color-amber: #ba7517;
 
+  /* Shape & layout */
   --radius: 12px;
   --max-width: 900px;
 }
 
+/* =========================================================================
+   3. LAYOUT WRAPPER
+   ========================================================================= */
 .page {
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
+/* =========================================================================
+   4. NAVIGATION BAR (shared across all pages)
+   ========================================================================= */
 .nav {
   display: flex;
   align-items: center;
@@ -74,11 +89,31 @@ body {
   font-weight: bold;
 }
 
+/* =========================================================================
+   5. FOOTER (shared across all pages)
+   ========================================================================= */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 40px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  border-top: 1px solid var(--color-border);
+}
+
+/* =========================================================================
+   6. GENERIC HEADER
+   Note: the bare "header" selector applies to every <header> element.
+   ========================================================================= */
 header {
   padding: 60px 20px;
   text-align: center;
 }
 
+/* =========================================================================
+   7. HOME / HERO  (not used by the uploaded pages)
+   ========================================================================= */
 .hero-intro {
   font-size: 18px;
   font-weight: bold;
@@ -112,6 +147,11 @@ header {
   text-decoration: none;
 }
 
+/* =========================================================================
+   8. GIT VS GITHUB PAGE
+   ========================================================================= */
+
+/* 8a. Page header */
 .git-header {
   padding: 30px 20px;
   text-align: center;
@@ -119,6 +159,7 @@ header {
   margin-bottom: 10px;
 }
 
+/* 8b. Side-by-side comparison cards */
 .comparison {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -156,6 +197,7 @@ header {
   color: var(--color-text-secondary);
 }
 
+/* 8c. Summary box */
 .summary {
   margin: 22px 60px 40px;
   background: var(--color-card-bg);
@@ -172,6 +214,7 @@ header {
   line-height: 1.6;
 }
 
+/* 8d. "Meet the creator" box */
 .creator {
   margin: 22px 60px 40px;
   background: var(--color-card-bg);
@@ -205,11 +248,6 @@ header {
   margin-bottom: 4px;
 }
 
-.creator-text {
-  margin: 0 0 0 6px;
-  font-size: 17px;
-}
-
 .creator-content p {
   margin: 0;
   font-size: 14px;
@@ -217,6 +255,134 @@ header {
   line-height: 1.6;
 }
 
+/* =========================================================================
+   9. COMMANDS PAGE
+   ========================================================================= */
+
+/* 9a. Scoped theme variables + page container */
+.commands {
+  --commands-text: #252532;
+  --commands-muted: #5f5f6b;
+  --commands-accent: #3d3a8c;
+  --commands-card-bg: #faf9f5;
+  --commands-card-border: #e5e5ea;
+  --commands-code-bg: #eeece4;
+
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 56px;
+}
+
+/* 9b. Title block */
+.commands-header {
+  padding: 56px 0 24px;
+  text-align: center;
+}
+
+.commands-header h1 {
+  margin: 0 0 12px;
+  font-size: 34px;
+  color: var(--commands-text);
+}
+
+.commands-header p {
+  margin: 0;
+  color: var(--commands-muted);
+}
+
+/* 9c. Section groups (Get started, Save your work, etc.) */
+.command-group {
+  margin-top: 40px;
+}
+
+.command-group h2 {
+  margin: 0 0 16px;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--commands-accent);
+}
+
+/* 9d. Card grid */
+.command-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.command-card {
+  padding: 20px 22px;
+  border: 1px solid var(--commands-card-border);
+  border-radius: 10px;
+  background: var(--commands-card-bg);
+}
+
+.command-card code {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--commands-code-bg);
+  color: var(--commands-text);
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.command-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--commands-muted);
+}
+
+/* =========================================================================
+   10. FEATURE CARDS & MISC 
+   ========================================================================= */
+.git-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 0 60px 40px;
+}
+
+.feature-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px 34px;
+}
+
+.feature-card h2 {
+  color: var(--color-text);
+  font-size: 25px;
+  margin: 0 0 8px;
+}
+
+.feature-card p {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.feature-logo {
+  height: 40px;
+  width: auto;
+  margin-bottom: 12px;
+}
+
+.creator-text {
+  margin: 0 0 0 6px;
+  font-size: 17px;
+}
+
+/* =========================================================================
+   11. RESPONSIVE (max-width: 600px)
+   Grouped at the end so these overrides win over the base rules above.
+   ========================================================================= */
 @media (width <= 600px) {
   .nav {
     flex-direction: column;
@@ -246,47 +412,4 @@ header {
     margin-left: 20px;
     margin-right: 20px;
   }
-}
-
-.git-features {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  padding: 0 60px 40px;
-}
-
-.feature-card {
-  background-color: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: 28px 34px;
-}
-
-.feature-card h2 {
-  color: var(--color-text);
-  font-size: 25px;
-  margin: 0 0 8px;
-}
-
-.feature-card p {
-  color: var(--color-text-secondary);
-  font-size: 14px;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 40px;
-  font-size: 14px;
-  color: var(--color-text-secondary);
-  border-top: 1px solid var(--color-border);
-}
-
-.feature-logo {
-  height: 40px;
-  width: auto;
-  margin-bottom: 12px;
 }
