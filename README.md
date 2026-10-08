@@ -10,7 +10,7 @@
 | --- | --- | --- |
 | Home | `index.html` | Completed |
 | Git vs GitHub | `git-vs-github.html` | Completed |
-| Commands | `commands.html` | Navigation only |
+| Commands | `commands.html` | Completed |
 
 ## Run locally
 
@@ -67,8 +67,7 @@ git-infographic/
 - [x] Home page
 - [x] Lint + CI setup
 - [x] Git vs GitHub page content
-- [ ] Commands cheat sheet
-- [ ] Dark mode (`scripts/script.js`)
+- [x] Commands cheat sheet
 
 ## Credits
 
